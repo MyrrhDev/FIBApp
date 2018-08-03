@@ -24,8 +24,8 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".DarkMenuActivity"
-            android:label="DarkMenuActivity"
+            android:name=".MenuActivity"
+            android:label="MenuActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
