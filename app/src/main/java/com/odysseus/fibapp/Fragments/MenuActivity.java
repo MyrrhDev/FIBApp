@@ -1,29 +1,44 @@
-package com.odysseus.fibapp;
+package com.odysseus.fibapp.Fragments;
 
-import android.media.Image;
+import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ExpandableListView;
 import android.widget.ImageButton;
 
-public class MenuActivity extends AppCompatActivity {
+import com.odysseus.fibapp.R;
+
+public class MenuActivity extends Fragment {
 
     ImageButton ajustesib, avisosib, calendarioib, horarioib, notasib;
+    View v;
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_menu);
-        initializeButtons();
-        setOnClickListenerMenuButtons();
+    public MenuActivity() {
+        // Required empty public constructor
     }
 
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        v = inflater.inflate(R.layout.activity_menu, container, false);
+
+        initializeButtons();
+        setOnClickListenerMenuButtons();
+
+        return v;
+    }
+
+
     protected void initializeButtons() {
-        ajustesib = (ImageButton) findViewById(R.id.imageButton);
-        avisosib = (ImageButton) findViewById(R.id.imageButton2);
-        notasib = (ImageButton) findViewById(R.id.imageButton3);
-        horarioib = (ImageButton) findViewById(R.id.imageButton5);
-        calendarioib = (ImageButton) findViewById(R.id.imageButton4);
+        ajustesib = (ImageButton) v.findViewById(R.id.imageButton);
+        avisosib = (ImageButton) v.findViewById(R.id.imageButton2);
+        notasib = (ImageButton) v.findViewById(R.id.imageButton3);
+        horarioib = (ImageButton) v.findViewById(R.id.imageButton5);
+        calendarioib = (ImageButton) v.findViewById(R.id.imageButton4);
     }
 
     protected void setOnClickListenerMenuButtons() {

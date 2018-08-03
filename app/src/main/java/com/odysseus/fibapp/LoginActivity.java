@@ -3,22 +3,21 @@ package com.odysseus.fibapp;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.annotation.TargetApi;
-import android.content.pm.PackageManager;
-import android.support.annotation.NonNull;
-import android.support.design.widget.Snackbar;
-import android.support.v7.app.AppCompatActivity;
 import android.app.LoaderManager.LoaderCallbacks;
-
+import android.content.Context;
 import android.content.CursorLoader;
+import android.content.Intent;
 import android.content.Loader;
+import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.AsyncTask;
-
 import android.os.Build;
 import android.os.Bundle;
 import android.provider.ContactsContract;
+import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -29,28 +28,38 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.odysseus.fibapp.Constants.OAuthParams;
+import com.odysseus.fibapp.ServiceSettings.AccessTokenService;
+import com.odysseus.fibapp.ServiceSettings.ServiceGenerator;
+import com.odysseus.fibapp.ServiceSettings.TokenResponse;
+
 import java.util.ArrayList;
 import java.util.List;
 
-import static android.Manifest.permission.READ_CONTACTS;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 /**
  * A login screen that offers login via email/password.
  */
 public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<Cursor> {
 
-    /**
-     * Id to identity READ_CONTACTS permission request.
-     */
-    private static final int REQUEST_READ_CONTACTS = 0;
 
-    /**
-     * A dummy authentication store containing known user names and passwords.
+    private TokenResponse tokenResponse;
+    SharedPreferences prefs;
+    TextView textView;
+    private boolean isLogged;
+
+
+    /** A dummy authentication store containing known user names and passwords.
      * TODO: remove after connecting to a real authentication system.
      */
+
     private static final String[] DUMMY_CREDENTIALS = new String[]{
             "foo@example.com:hello", "bar@example.com:world"
     };
+
     /**
      * Keep track of the login task to ensure we can cancel it if requested.
      */
@@ -66,9 +75,10 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        // Set up the login form.
+        // Set up the login form - Por ahora no sirve para hacer login pero no borrar:
+
         mEmailView = (AutoCompleteTextView) findViewById(R.id.email);
-        populateAutoComplete();
+        //populateAutoComplete();
 
         mPasswordView = (EditText) findViewById(R.id.password);
         mPasswordView.setOnEditorActionListener(new TextView.OnEditorActionListener() {
@@ -82,18 +92,96 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
             }
         });
 
+        //
+        prefs = this.getSharedPreferences("com.inlab.racodemoapi", Context.MODE_PRIVATE);
+
         Button mEmailSignInButton = (Button) findViewById(R.id.email_sign_in_button);
         mEmailSignInButton.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
-                attemptLogin();
+                // If we click on login button, we'll be redirected to the REDIRECT_URI parameter of our application
+                Intent intent = new Intent(
+                        Intent.ACTION_VIEW,
+                        Uri.parse(ServiceGenerator.API_BASE_URL + "o/authorize/" + "?client_id=" + OAuthParams.clientID + "&redirect_uri=" + OAuthParams.redirectUri + "&response_type=" + OAuthParams.responseType + "&state=" + OAuthParams.getRandomString()));
+                startActivity(intent);
+                Log.v("next button", "next button");
+                //Lo que se llamaba antes - no borrar
+                //attemptLogin();
             }
         });
-
+/*
         mLoginFormView = findViewById(R.id.login_form);
-        mProgressView = findViewById(R.id.login_progress);
+        mProgressView = findViewById(R.id.login_progress);*/
+        Log.v("next process", "next process");
     }
 
+
+
+    @Override
+    // Catch the Authorization Code
+    protected void onResume() {
+        super.onResume();
+        Log.v("next onResume", "next onResume");
+        // the intent filter defined in AndroidManifest will handle the return from ACTION_VIEW intent
+        Uri uri = getIntent().getData();
+        Log.v("next getData", "next getData");
+        if (uri != null && uri.toString().startsWith(OAuthParams.redirectUri)) {
+            Log.v("next getData", "next getData");
+            // use the parameter your API exposes for the code (mostly it's "code")
+            String code = uri.getQueryParameter("code");
+            String received_state = uri.getQueryParameter("state");
+            Log.d("the two states", OAuthParams.state + " " + received_state);
+            if (code != null && received_state != null && OAuthParams.state.equals(received_state)) {
+                // At this point, we have the Authorization code, so we can get the Access token
+                AccessTokenService accessTokenService =
+                        ServiceGenerator.createService(AccessTokenService.class);
+                Call<TokenResponse> call = accessTokenService.getAccessToken("authorization_code", code, OAuthParams.redirectUri, OAuthParams.clientID, OAuthParams.clientSecret);
+                call.enqueue(new Callback<TokenResponse>() {
+                    @Override
+                    public void onResponse(Call<TokenResponse> call, Response<TokenResponse> response) {
+                        if (response.isSuccessful()) {
+                            Log.d("isSuccessful", "isSuccessful");
+                            tokenResponse = response.body();
+                            isLogged = true;
+                            savePrefs();
+                            goToMain();
+                        }
+                    }
+
+                    @Override
+                    public void onFailure(Call<TokenResponse> call, Throwable t) {
+                        Log.d("onFailure", t.toString());
+                    }
+                });
+
+            } else if (uri.getQueryParameter("error") != null) {
+                // show an error message
+                Log.d("onFailure", uri.getQueryParameter("error"));
+            }
+        }
+    }
+
+    private void savePrefs() {
+        SharedPreferences.Editor editor = prefs.edit();
+        editor.putString("accessToken", this.tokenResponse.getAccessToken());
+        editor.putString("refreshToken", this.tokenResponse.getRefreshToken());
+        editor.putBoolean("isLogged", this.isLogged);
+        editor.apply();
+    }
+
+    private void goToMain() {
+        //Tendria que abrir el menu con el drawer (no abierto)
+        Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+        //Intent intent = new Intent(LoginActivity.this, LoggedActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+        startActivity(intent);
+        Log.v("next intent", "next intent");
+    }
+
+
+    /*
     private void populateAutoComplete() {
         if (!mayRequestContacts()) {
             return;
@@ -101,6 +189,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
 
         getLoaderManager().initLoader(0, null, this);
     }
+
 
     private boolean mayRequestContacts() {
         if (Build.VERSION.SDK_INT < Build.VERSION_CODES.M) {
@@ -122,11 +211,12 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
             requestPermissions(new String[]{READ_CONTACTS}, REQUEST_READ_CONTACTS);
         }
         return false;
-    }
+    }*
 
     /**
      * Callback received when a permissions request has been completed.
      */
+    /*
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions,
                                            @NonNull int[] grantResults) {
@@ -135,7 +225,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
                 populateAutoComplete();
             }
         }
-    }
+    }*/
 
 
     /**
@@ -143,6 +233,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
      * If there are form errors (invalid email, missing fields, etc.), the
      * errors are presented and no actual login attempt is made.
      */
+
     private void attemptLogin() {
         if (mAuthTask != null) {
             return;
