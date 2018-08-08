@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/cardViewAsignatura"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_margin="8dp">
+
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/Control1"
+                android:layout_width="104dp"
+                android:layout_height="23dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="40dp"
+                android:text="Control 1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/Control2"
+                android:layout_width="103dp"
+                android:layout_height="21dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="32dp"
+                android:text="Control 2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/Control1" />
+
+            <TextView
+                android:id="@+id/Control3"
+                android:layout_width="104dp"
+                android:layout_height="23dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="32dp"
+                android:text="Control 3"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/Control2" />
+
+            <TextView
+                android:id="@+id/Lab"
+                android:layout_width="103dp"
+                android:layout_height="21dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="32dp"
+                android:text="Lab"
+                android:textAlignment="center"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/Control3" />
+
+
+            <EditText
+                android:id="@+id/result1"
+                android:layout_width="100dp"
+                android:layout_height="33dp"
+                android:layout_marginEnd="48dp"
+                android:layout_marginStart="84dp"
+                android:layout_marginTop="24dp"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@+id/Control1"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/result2"
+                android:layout_width="100dp"
+                android:layout_height="33dp"
+                android:layout_marginEnd="48dp"
+                android:layout_marginStart="84dp"
+                android:layout_marginTop="20dp"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@+id/Control2"
+                app:layout_constraintTop_toBottomOf="@+id/result1" />
+
+            <EditText
+                android:id="@+id/result3"
+                android:layout_width="102dp"
+                android:layout_height="38dp"
+                android:layout_marginEnd="47dp"
+                android:layout_marginStart="84dp"
+                android:layout_marginTop="20dp"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@+id/Lab"
+                app:layout_constraintTop_toBottomOf="@+id/resultlab" />
+
+            <EditText
+                android:id="@+id/resultlab"
+                android:layout_width="100dp"
+                android:layout_height="38dp"
+                android:layout_marginEnd="48dp"
+                android:layout_marginStart="84dp"
+                android:layout_marginTop="20dp"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@+id/Control3"
+                app:layout_constraintTop_toBottomOf="@+id/result2" />
+
+
+            <TextView
+                android:id="@+id/resultTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="52dp"
+                android:layout_marginTop="36dp"
+                android:text="Nota Final"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/Lab" />
+
+            <TextView
+                android:id="@+id/showResultText"
+                android:layout_width="86dp"
+                android:layout_height="25dp"
+                android:layout_marginEnd="51dp"
+                android:layout_marginStart="116dp"
+                android:layout_marginTop="32dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@+id/resultTextView"
+                app:layout_constraintTop_toBottomOf="@+id/result3" />
+
+
+        </android.support.constraint.ConstraintLayout>
+    </android.support.v7.widget.CardView>
+</LinearLayout>

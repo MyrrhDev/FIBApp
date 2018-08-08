@@ -9,29 +9,29 @@
             android:icon="@drawable/ic_menu_camera"
             android:title="Notas" />
         <item
-            android:id="@+id/nav_gallery"
+            android:id="@+id/nav_avisos"
             android:icon="@drawable/ic_menu_gallery"
-            android:title="Gallery" />
+            android:title="Avisos" />
         <item
-            android:id="@+id/nav_slideshow"
+            android:id="@+id/nav_calendario"
             android:icon="@drawable/ic_menu_slideshow"
-            android:title="Slideshow" />
+            android:title="Calendario" />
         <item
-            android:id="@+id/nav_manage"
+            android:id="@+id/nav_horario"
             android:icon="@drawable/ic_menu_manage"
-            android:title="Tools" />
+            android:title="Horario" />
     </group>
 
     <item android:title="Communicate">
         <menu>
             <item
-                android:id="@+id/nav_share"
+                android:id="@+id/log_out"
                 android:icon="@drawable/ic_menu_share"
-                android:title="Share" />
+                android:title="Log out" />
             <item
-                android:id="@+id/nav_send"
-                android:icon="@drawable/ic_menu_send"
-                android:title="Send" />
+                android:id="@+id/ajustes"
+                android:icon="@drawable/ic_menu_share"
+                android:title="Ajustes" />
         </menu>
     </item>
 

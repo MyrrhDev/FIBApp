@@ -15,7 +15,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".LauncherActivity"
+        <activity
+            android:name=".LauncherActivity"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -35,10 +36,11 @@
 
                 <data
                     android:host="raco"
-                    android:scheme="apifib"/>
+                    android:scheme="apifib" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity"></activity>
+        <activity android:name=".MainActivity" />
+        <activity android:name=".Asignaturas.CalculoCI"></activity>
     </application>
 
 </manifest>
