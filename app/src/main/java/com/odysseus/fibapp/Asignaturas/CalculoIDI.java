@@ -1,15 +1,24 @@
 package com.odysseus.fibapp.Asignaturas;
 
-public class CalculoIDI {
+import io.realm.RealmObject;
+import io.realm.annotations.PrimaryKey;
 
+public class CalculoIDI extends RealmObject {
+
+    @PrimaryKey
+    private String name;
     private double control1;
     private double control2;
-    private double control3;
+
     private double lab;
     static double notafinal;
 
-    public static void calculate(double control1, double control2, double control3, double lab) {
-        notafinal = (control1*0.15) + (control2*0.25) + (control3*0.4) + (lab*0.2);
+    public CalculoIDI() {
+
+    }
+
+    public static void calculate(double control1, double control2, double lab) {
+        notafinal = (control1*0.25) + (control2*0.5) + (lab*0.25);
     }
 
     public static double getNotafinal() {
@@ -36,14 +45,6 @@ public class CalculoIDI {
         this.control2 = control2;
     }
 
-    public double getControl3() {
-        return control3;
-    }
-
-    public void setControl3(double control3) {
-        this.control3 = control3;
-    }
-
     public double getLab() {
         return lab;
     }
@@ -52,4 +53,11 @@ public class CalculoIDI {
         this.lab = lab;
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
 }

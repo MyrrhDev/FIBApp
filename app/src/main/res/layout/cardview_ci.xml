@@ -4,70 +4,218 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:id="@+id/mainlayout"
     android:orientation="vertical">
 
     <android.support.v7.widget.CardView
         android:id="@+id/cardViewAsignatura"
         android:layout_width="match_parent"
-        android:layout_height="175dp"
+        android:layout_height="300dp"
         android:layout_margin="8dp">
 
 
-        <android.support.constraint.ConstraintLayout
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/textViewNombre"
-                android:layout_width="0dp"
-                android:layout_height="18dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginStart="57dp"
-                android:layout_marginTop="24dp"
-                android:text="Nombre"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="11dp"
+                android:layout_weight="1"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:orientation="horizontal">
 
-            <TextView
-                android:id="@+id/textViewApellidos"
-                android:layout_width="0dp"
-                android:layout_height="19dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginStart="57dp"
-                android:layout_marginTop="8dp"
-                android:text="Apellidos"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textViewNombre" />
+                <TextView
+                    android:id="@+id/Control1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Control 1"
+                    android:textAlignment="center" />
 
-            <TextView
-                android:id="@+id/textViewTest"
-                android:layout_width="0dp"
-                android:layout_height="18dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginStart="57dp"
-                android:layout_marginTop="24dp"
-                android:text="Test"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textViewApellidos" />
+                <EditText
+                    android:id="@+id/result1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
 
-            <TextView
-                android:id="@+id/textViewTest2"
-                android:layout_width="0dp"
-                android:layout_height="19dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginStart="57dp"
-                android:layout_marginTop="8dp"
-                android:text="test2"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textViewTest" />
+                    android:ems="10"
+                    android:inputType="numberDecimal"
+                    android:textAlignment="center"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/porcentaje1"
+                    android:layout_width="70dp"
+                    android:layout_height="wrap_content"
 
 
-        </android.support.constraint.ConstraintLayout>
+                    android:textAlignment="center"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="4dp"
+                android:layout_weight="1"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/Control2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Control 2"
+                    android:textAlignment="center" />
+
+                <EditText
+                    android:id="@+id/result2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:ems="10"
+                    android:inputType="numberDecimal"
+                    android:textAlignment="center"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/porcentaje2"
+                    android:layout_width="70dp"
+                    android:layout_height="wrap_content"
+
+                    android:text="(70%)"
+                    android:textAlignment="center"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="4dp"
+                android:layout_weight="1"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/Control3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Control 3"
+                    android:textAlignment="center" />
+
+                <EditText
+                    android:id="@+id/result3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:ems="10"
+                    android:inputType="numberDecimal"
+                    android:textAlignment="center"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/porcentaje3"
+                    android:layout_width="70dp"
+                    android:layout_height="wrap_content"
+
+
+                    android:textAlignment="center"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="29dp"
+                android:layout_weight="1"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/Lab"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Lab"
+                    android:textAlignment="center" />
+
+                <EditText
+                    android:id="@+id/resultlab"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:ems="10"
+                    android:inputType="numberDecimal"
+                    android:textAlignment="center"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/porcentajelab"
+                    android:layout_width="70dp"
+                    android:layout_height="wrap_content"
+                    android:text="(30%)"
+                    android:textAlignment="center"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="15dp"
+                android:layout_weight="1"
+                android:paddingLeft="20dp"
+                android:paddingRight="90dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/resultTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Nota Final"
+                    android:textAlignment="center"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/showResultText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textAlignment="center"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="15dp"
+                android:layout_weight="1"
+                android:paddingLeft="150dp"
+                android:paddingBottom="5dp"
+                android:orientation="horizontal">
+
+
+
+                <Button
+                    android:id="@+id/saveButton"
+                    android:layout_width="70dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:textColor="#FFFFFF"
+                    android:background="@drawable/button_save"
+                    android:text="Save" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
     </android.support.v7.widget.CardView>
 </LinearLayout>

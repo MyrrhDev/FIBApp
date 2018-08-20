@@ -6,16 +6,21 @@ import android.widget.TextView;
 
 import com.odysseus.fibapp.R;
 
-public class CalculoCI  {
+import io.realm.RealmObject;
+import io.realm.annotations.PrimaryKey;
 
+public class CalculoCI extends RealmObject {
+
+    @PrimaryKey
+    private String name;
     private double control1;
     private double control2;
     private double control3;
     private double lab;
     static double notafinal;
 
-    public static void calculate(double control1, double control2, double control3, double lab) {
-        notafinal = (control1*0.15) + (control2*0.25) + (control3*0.4) + (lab*0.2);
+    public void calculate(double control1, double control2, double control3, double lab) {
+        notafinal = ((((control1 + control2 + control3)/3)*0.7) + (lab*0.3));
     }
 
     public static double getNotafinal() {
@@ -58,4 +63,11 @@ public class CalculoCI  {
         this.lab = lab;
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
 }

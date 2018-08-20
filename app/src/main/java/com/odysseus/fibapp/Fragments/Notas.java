@@ -40,7 +40,8 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-import static com.odysseus.fibapp.R.layout.cardview_ac;
+import io.realm.Realm;
+import io.realm.RealmResults;
 
 public class Notas extends Fragment {
     private ExpandableListView listView;
@@ -52,13 +53,13 @@ public class Notas extends Fragment {
     private List <Result> asignaturas;
     private int count;
     SharedPreferences prefs;
+
     String accessToken;
 
     RacoAPIService racoAPIService;
     TokenResponse ts;
 
     View v;
-    TextView test;
 
     public Notas() {
         // Required empty public constructor
@@ -86,9 +87,7 @@ public class Notas extends Fragment {
 
 
     void getData () {
-        //listDataHeader = new ArrayList<>();
         asignaturas = new ArrayList<>();
-        //listHash = new HashMap<>();
         accessToken = prefs.getString("accessToken", null);
         racoAPIService = ServiceGenerator.createService(RacoAPIService.class, OAuthParams.clientID, OAuthParams.clientSecret, accessToken, getActivity());
         Call<Asignaturas> call = racoAPIService.getMyClasses();
@@ -201,6 +200,8 @@ public class Notas extends Fragment {
         builder.create();
         builder.show();
     }
+
+
 
 
     private void goToLogin() {
