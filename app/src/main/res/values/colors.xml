@@ -9,4 +9,19 @@
     <color name="colorAccent">#db0039</color>
     <color name="colorAccentLightPink">#db0039</color>
     <color name="colorAccentDarkPink">#ba113a</color>
+
+    <color name="subjectBlue">#bdd5e6</color>
+    <color name="subjectBlueBorder">#9ebfd7</color>
+    <color name="subjectGreen">#dbe6bd</color>
+    <color name="subjectGreenBorder">#c1cf99</color>
+    <color name="subjectPink">#FAA0D0</color>
+    <color name="subjectPinkBorder">#d9aedf</color>
+    <color name="subjectOrange">#FFCB87</color>
+    <color name="subjectOrangeBorder">#dca874</color>
+    <color name="subjectPurple">#E2A9FC</color>
+    <color name="subjectPurpleBorder">#c2aad7</color>
+    <color name="subjectYellow">#ffefac</color>
+    <color name="subjectYellowBorder">#e2d869</color>
+    <color name="subjectGray">#000000</color>
+    <color name="subjectGrayBorder">#cbcdce</color>
 </resources>

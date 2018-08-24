@@ -6,9 +6,713 @@
     tools:context=".Fragments.HorarioFragment">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
 
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+            <TextView
+                android:id="@+id/textViewBlank"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                />
+
+            <TextView
+                android:id="@+id/monday"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Dilluns"
+                android:padding="6dp"
+                android:textAlignment="center"/>
+
+            <TextView
+                android:id="@+id/tuesday"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Dimarts"
+                android:padding="6dp"
+                android:textAlignment="center"/>
+
+            <TextView
+                android:id="@+id/wednesday"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Dimecres"
+                android:padding="6dp"
+                android:textAlignment="center"/>
+
+            <TextView
+                android:id="@+id/thursday"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Dijous"
+                android:padding="6dp"
+                android:textAlignment="center"/>
+
+            <TextView
+                android:id="@+id/friday"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Divendres"
+                android:padding="6dp"
+                android:textAlignment="center"/>
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+
+            <TextView
+                android:id="@+id/textView1"
+                android:layout_width="70dp"
+                android:layout_height="wrap_content"
+                android:text="8:00-9:00"
+                android:textAlignment="center"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/dillEight"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="6dp"
+
+                android:textAlignment="center"/>
+            <TextView
+                android:id="@+id/dimEight"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:padding="6dp"
+                android:textAlignment="center"/>
+            <TextView
+                android:id="@+id/dimeEight"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:padding="6dp"
+                android:textAlignment="center"/>
+            <TextView
+                android:id="@+id/dijEight"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:padding="6dp"
+                android:textAlignment="center"/>
+            <TextView
+                android:id="@+id/divEight"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:padding="6dp"
+                android:textAlignment="center"/>
+
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="9:00-10:00"
+                android:textAlignment="center"
+                android:textSize="12sp"
+                />
+
+            <TextView
+                android:id="@+id/dillNine"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:padding="6dp"
+                android:textAlignment="center"/>
+            <TextView
+                android:id="@+id/dimNine"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:padding="6dp"
+                android:textAlignment="center"/>
+            <TextView
+                android:id="@+id/dimeNine"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:padding="6dp"
+                android:textAlignment="center"/>
+            <TextView
+                android:id="@+id/dijNine"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:padding="6dp"
+                android:textAlignment="center"/>
+            <TextView
+                android:id="@+id/divNine"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:padding="6dp"
+                android:textAlignment="center"/>
+
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="10:00-11:00"
+                android:textSize="12sp"
+                android:textAlignment="center"/>
+
+            <TextView
+                android:id="@+id/dillTen"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:padding="6dp"
+                android:textAlignment="center"/>
+            <TextView
+                android:id="@+id/dimTen"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:padding="6dp"
+                android:textAlignment="center"/>
+            <TextView
+                android:id="@+id/dimeTen"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:padding="6dp"
+                android:textAlignment="center"/>
+            <TextView
+                android:id="@+id/dijTen"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:padding="6dp"
+                android:textAlignment="center"/>
+            <TextView
+                android:id="@+id/divTen"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:padding="6dp"
+                android:textAlignment="center"/>
+
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="11:00-12:00"
+                android:textSize="12sp"
+                android:textAlignment="center"/>
+
+            <TextView
+                android:id="@+id/dillEleven"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:padding="6dp"
+                android:textAlignment="center"/>
+            <TextView
+                android:id="@+id/dimEleven"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:padding="6dp"
+                android:textAlignment="center"/>
+            <TextView
+                android:id="@+id/dimeEleven"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:padding="6dp"
+                android:textAlignment="center"/>
+            <TextView
+                android:id="@+id/dijEleven"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:padding="6dp"
+                android:textAlignment="center"/>
+            <TextView
+                android:id="@+id/divEleven"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:padding="6dp"
+                android:textAlignment="center"/>
+
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+            <TextView
+                android:id="@+id/textView5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="12:00-13:00"
+                android:textSize="12sp"
+                android:textAlignment="center"/>
+
+            <TextView
+                android:id="@+id/dillTwelve"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:padding="6dp"
+                android:textAlignment="center"/>
+            <TextView
+                android:id="@+id/dimTwelve"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:padding="6dp"
+                android:textAlignment="center"/>
+            <TextView
+                android:id="@+id/dimeTwelve"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:padding="6dp"
+                android:textAlignment="center"/>
+            <TextView
+                android:id="@+id/dijTwelve"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:padding="6dp"
+                android:textAlignment="center"/>
+            <TextView
+                android:id="@+id/divTwelve"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:padding="6dp"
+                android:textAlignment="center"/>
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+            <TextView
+                android:id="@+id/textView6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="13:00-14:00"
+                android:textSize="12sp"
+                android:textAlignment="center"/>
+
+            <TextView
+                android:id="@+id/dillOne"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:padding="6dp"
+                android:textAlignment="center"/>
+            <TextView
+                android:id="@+id/dimOne"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:padding="6dp"
+                android:textAlignment="center"/>
+            <TextView
+                android:id="@+id/dimeOne"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:padding="6dp"
+                android:textAlignment="center"/>
+            <TextView
+                android:id="@+id/dijOne"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:padding="6dp"
+                android:textAlignment="center"/>
+            <TextView
+                android:id="@+id/divOne"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:padding="6dp"
+                android:textAlignment="center"/>
+        </TableRow>
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+
+            <TextView
+                android:id="@+id/textView7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="14:00-15:00"
+                android:textSize="12sp"
+                android:textAlignment="center"/>
+
+            <TextView
+                android:id="@+id/dillTwo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:padding="6dp"
+                android:textAlignment="center"/>
+            <TextView
+                android:id="@+id/dimTwo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:padding="6dp"
+                android:textAlignment="center"/>
+            <TextView
+                android:id="@+id/dimeTwo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:padding="6dp"
+                android:textAlignment="center"/>
+            <TextView
+                android:id="@+id/dijTwo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:padding="6dp"
+                android:textAlignment="center"/>
+            <TextView
+                android:id="@+id/divTwo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:padding="6dp"
+                android:textAlignment="center"/>
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+            <TextView
+                android:id="@+id/textView8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="15:00-16:00"
+                android:textSize="12sp"
+                android:textAlignment="center"/>
+
+            <TextView
+                android:id="@+id/dillThree"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:padding="6dp"
+                android:textAlignment="center"/>
+            <TextView
+                android:id="@+id/dimThree"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:padding="6dp"
+                android:textAlignment="center"/>
+            <TextView
+                android:id="@+id/dimeThree"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:padding="6dp"
+                android:textAlignment="center"/>
+            <TextView
+                android:id="@+id/dijThree"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:padding="6dp"
+                android:textAlignment="center"/>
+            <TextView
+                android:id="@+id/divThree"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:padding="6dp"
+                android:textAlignment="center"/>
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+            <TextView
+                android:id="@+id/textView9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="16:00-17:00"
+                android:textSize="12sp"
+                android:textAlignment="center"/>
+
+            <TextView
+                android:id="@+id/dillFour"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:padding="6dp"
+                android:textAlignment="center"/>
+            <TextView
+                android:id="@+id/dimFour"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:padding="6dp"
+                android:textAlignment="center"/>
+            <TextView
+                android:id="@+id/dimeFour"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:padding="6dp"
+                android:textAlignment="center"/>
+            <TextView
+                android:id="@+id/dijFour"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:padding="6dp"
+                android:textAlignment="center"/>
+            <TextView
+                android:id="@+id/divFour"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:padding="6dp"
+                android:textAlignment="center"/>
+
+        </TableRow>
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+
+            <TextView
+                android:id="@+id/textView10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="17:00-18:00"
+                android:textSize="12sp"
+                android:textAlignment="center"/>
+
+            <TextView
+                android:id="@+id/dillFive"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:padding="6dp"
+                android:textAlignment="center"/>
+            <TextView
+                android:id="@+id/dimFive"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:padding="6dp"
+                android:textAlignment="center"/>
+            <TextView
+                android:id="@+id/dimeFive"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:padding="6dp"
+                android:textAlignment="center"/>
+            <TextView
+                android:id="@+id/dijFive"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:padding="6dp"
+                android:textAlignment="center"/>
+            <TextView
+                android:id="@+id/divFive"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:padding="6dp"
+                android:textAlignment="center"/>
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+            <TextView
+                android:id="@+id/textView11"
+                android:layout_width="72dp"
+                android:layout_height="wrap_content"
+                android:text="18:00-19:00"
+                android:textSize="12sp"
+                android:textAlignment="center"/>
+
+            <TextView
+                android:id="@+id/dillSix"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:padding="6dp"
+                android:textAlignment="center"/>
+            <TextView
+                android:id="@+id/dimSix"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:padding="6dp"
+                android:textAlignment="center"/>
+            <TextView
+                android:id="@+id/dimeSix"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:padding="6dp"
+                android:textAlignment="center"/>
+            <TextView
+                android:id="@+id/dijSix"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:padding="6dp"
+                android:textAlignment="center"/>
+            <TextView
+                android:id="@+id/divSix"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:padding="6dp"
+                android:textAlignment="center"/>
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+            <TextView
+                android:id="@+id/textView12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="19:00-20:00"
+                android:textSize="12sp"
+                android:textAlignment="center"/>
+
+            <TextView
+                android:id="@+id/dillSeven"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:padding="6dp"
+                android:textAlignment="center"/>
+            <TextView
+                android:id="@+id/dimSeven"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:padding="6dp"
+                android:textAlignment="center"/>
+            <TextView
+                android:id="@+id/dimeSeven"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:padding="6dp"
+                android:textAlignment="center"/>
+            <TextView
+                android:id="@+id/dijSeven"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:padding="6dp"
+                android:textAlignment="center"/>
+            <TextView
+                android:id="@+id/divSeven"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:padding="6dp"
+                android:textAlignment="center"/>
+        </TableRow>
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+
+            <TextView
+                android:id="@+id/textView13"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="20:00-21:00"
+                android:textSize="12sp"
+                android:textAlignment="center"/>
+
+            <TextView
+                android:id="@+id/dillEightPM"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:padding="6dp"
+                android:textAlignment="center"/>
+            <TextView
+                android:id="@+id/dimEightPM"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:padding="6dp"
+                android:textAlignment="center"/>
+            <TextView
+                android:id="@+id/dimeEightPM"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:padding="6dp"
+                android:textAlignment="center"/>
+            <TextView
+                android:id="@+id/dijEightPM"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:padding="6dp"
+                android:textAlignment="center"/>
+            <TextView
+                android:id="@+id/divEightPM"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:padding="6dp"
+                android:textAlignment="center"/>
+        </TableRow>
+    </TableLayout>
 </FrameLayout>

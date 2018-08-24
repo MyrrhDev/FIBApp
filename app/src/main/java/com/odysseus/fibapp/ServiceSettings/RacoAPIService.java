@@ -1,6 +1,7 @@
 package com.odysseus.fibapp.ServiceSettings;
 
 import com.odysseus.fibapp.Models.Asignaturas;
+import com.odysseus.fibapp.Models.Schedule;
 import com.odysseus.fibapp.Models.User;
 
 import okhttp3.ResponseBody;
@@ -18,14 +19,14 @@ public interface RacoAPIService {
         Call<User> getMyInfo(
         );
 
-        @Headers("Accept: image/jpeg")
-        @GET("jo/foto.jpg")
-        Call<ResponseBody> getMyPhoto(
-        );
-
         @Headers("Accept: application/json")
         @GET("jo/assignatures")
         Call<Asignaturas> getMyClasses(
+        );
+
+        @Headers("Accept: application/json")
+        @GET("jo/classes")
+        Call<Schedule> getMySchedule(
         );
 
 }
